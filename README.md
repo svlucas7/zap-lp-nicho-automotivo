@@ -1,5 +1,12 @@
 ﻿# Landing Page — Nicho Automotivo
 
+[![Demo](https://img.shields.io/badge/demo-online-success?logo=netlify)](https://nichoautomotivo.netlify.app/)
+
+| Tema | Stack | Demo |
+|---|---|---|
+| Automotivo | HTML, Tailwind CSS, JS | https://nichoautomotivo.netlify.app/ |
+
+
 ![Preview](docs/preview.png)
 
 
