@@ -1,0 +1,117 @@
+/* Minimal Tailwind-like fallback for automotivo page when CDN is down */
+/* Scope: only core utilities used on the page to keep layout readable */
+
+:root{
+	--zap-green:#C2191A;
+	--zap-blue:#398AE5;
+	--light-gray:#f6f7f8;
+	--dark-gray:#373737;
+}
+
+/* Base */
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;color:var(--dark-gray);background:#fff}
+img{max-width:100%;height:auto;display:block}
+
+/* Layout utilities */
+.mx-auto{margin-left:auto;margin-right:auto}
+.text-center{text-align:center}
+.flex{display:flex}
+.flex-col{flex-direction:column}
+.items-center{align-items:center}
+.justify-center{justify-content:center}
+.gap-4{gap:1rem}
+.gap-6{gap:1.5rem}
+.lg\:gap-8{gap:2rem}
+.grid{display:grid}
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.sm\:grid-cols-2{grid-template-columns:repeat(1,minmax(0,1fr))}
+.lg\:grid-cols-3{grid-template-columns:repeat(1,minmax(0,1fr))}
+.sticky{position:sticky}
+.top-4{top:1rem}
+.z-10{z-index:10}
+.w-full{width:100%}
+.h-full{height:100%}
+.min-h-full{min-height:100%}
+.max-w-7xl{max-width:80rem}
+.px-6{padding-left:1.5rem;padding-right:1.5rem}
+.py-3{padding-top:.75rem;padding-bottom:.75rem}
+.pt-0{padding-top:0}
+.pt-8{padding-top:2rem}
+.pb-4{padding-bottom:1rem}
+.pt-12{padding-top:3rem}
+.pb-24{padding-bottom:6rem}
+.lg\:pt-16{padding-top:4rem}
+.lg\:pb-24{padding-bottom:6rem}
+.mb-2{margin-bottom:.5rem}
+.mb-3{margin-bottom:.75rem}
+.mb-6{margin-bottom:1.5rem}
+.mt-6{margin-top:1.5rem}
+.mt-10{margin-top:2.5rem}
+
+/* Cards and visuals */
+.rounded-lg{border-radius:.5rem}
+.rounded-xl{border-radius:.75rem}
+.rounded-2xl{border-radius:1rem}
+.ring-1{box-shadow:0 0 0 1px rgba(0,0,0,0.06)}
+.ring-gray-100{box-shadow:0 0 0 1px #f3f4f6}
+.ring-gray-200{box-shadow:0 0 0 1px #e5e7eb}
+.ring-zapGreen{box-shadow:0 0 0 1px var(--zap-green)}
+.bg-white{background:#fff}
+.bg-white\/95{background:rgba(255,255,255,.95)}
+.bg-white\/70{background:rgba(255,255,255,.7)}
+.bg-zapGreen{background:var(--zap-green);color:#fff}
+.text-white{color:#fff}
+.text-zapGray{color:var(--zap-blue)}
+.text-zapGray\/75{color:rgba(57,138,229,.75)}
+.text-zapGray\/70{color:rgba(57,138,229,.70)}
+.object-cover{object-fit:cover}
+.object-contain{object-fit:contain}
+.aspect-square{aspect-ratio:1/1}
+
+/* Typography */
+.font-semibold{font-weight:600}
+.font-medium{font-weight:500}
+.font-normal{font-weight:400}
+.text-sm{font-size:.875rem;line-height:1.25rem}
+.text-lg{font-size:1.125rem;line-height:1.75rem}
+.text-xl{font-size:1.25rem;line-height:1.75rem}
+.text-3xl{font-size:1.875rem;line-height:2.25rem}
+.text-4xl{font-size:2.25rem;line-height:2.5rem}
+.text-5xl{font-size:3rem;line-height:1}
+.leading-relaxed{line-height:1.625}
+.tracking-tight{letter-spacing:-0.01em}
+
+/* Simple helpers used */
+.hover\:bg-lightGray:hover{background:var(--light-gray)}
+.rounded-full{border-radius:9999px}
+.ring-1.ring-gray-100{box-shadow:0 0 0 1px #f3f4f6}
+.ring-1.ring-gray-200{box-shadow:0 0 0 1px #e5e7eb}
+
+/* Breakpoints */
+@media (min-width:640px){
+	.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}
+	.sm\:flex-row{flex-direction:row}
+	.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:1024px){
+	.lg\:px-8{padding-left:2rem;padding-right:2rem}
+	.lg\:pt-16{padding-top:4rem}
+	.lg\:pb-12{padding-bottom:3rem}
+	.lg\:pb-24{padding-bottom:6rem}
+	.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}
+	.lg\:text-5xl{font-size:3rem;line-height:1}
+	.lg\:gap-10{gap:2.5rem}
+	.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* Buttons used on page (minimal override if Tailwind missing) */
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;padding:.875rem 1.5rem;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--zap-green),#A31515);border:1px solid rgba(0,0,0,.04);text-decoration:none}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;padding:.875rem 1.5rem;font-weight:600;color:var(--zap-green);background:transparent;border:1.5px solid var(--zap-green);text-decoration:none}
+.btn-secondary:hover{color:#fff;background:linear-gradient(135deg,var(--zap-green),#A31515);border-color:var(--zap-green)}
+
+/* Common utility approximations */
+.section-image{transition:all .7s ease}
+.card-hover{transition:transform .2s ease}
+.card-hover:hover{transform:translateY(-2px)}
+

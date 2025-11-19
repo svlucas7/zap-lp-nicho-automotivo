@@ -1,0 +1,45 @@
+/*
+Portfólio – Landing Page
+Arquivo de estilos base para Tailwind CSS e componentes customizados.
+Use este arquivo para centralizar customizações e facilitar manutenção.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  html { scroll-behavior: smooth; }
+}
+
+/* Components */
+@layer components {
+  /* Botão principal: usado em CTAs e formulários */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-3 text-white font-semibold shadow-sm transition-colors duration-200 focus:outline-none;
+    /* Gradient primary fallback and visual polish */
+    background-image: linear-gradient(135deg, #C2191A, #A31515);
+    background-color: #C2191A; /* fallback for environments without gradient */
+    box-shadow: 0 6px 18px rgba(232,32,68,0.09);
+    --tw-ring-color: rgba(194,33,26,0.28);
+  }
+  /* Botão secundário: usado em ações alternativas */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg bg-transparent px-4 py-2 text-zapGray font-medium shadow-sm transition-colors duration-200 border;
+    border-color: #C2191A;
+  }
+  .btn-secondary:hover{ background-image: linear-gradient(135deg,#C2191A,#A31515); color:#fff; border-color:#C2191A; }
+  /* Card: usado para blocos de conteúdo */
+  .card {
+    @apply bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md;
+  }
+  /* Título de seção */
+  .section-title {
+    @apply text-2xl md:text-3xl font-extrabold text-gray-900;
+  }
+  /* Subtítulo de seção */
+  .section-subtitle {
+    @apply mt-2 text-gray-600 max-w-3xl;
+  }
+}
